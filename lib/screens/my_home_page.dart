@@ -1,11 +1,21 @@
 import 'package:app_two/constants/gaps.dart';
 import 'package:app_two/constants/sizes.dart';
+import 'package:app_two/screens/cat_sound_screen.dart';
 import 'package:app_two/widgets/main_title.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
+
+  void _onTapStart(BuildContext context) {
+    Navigator.of(context).pushAndRemoveUntil(
+      MaterialPageRoute(
+        builder: (context) => const CatSoundScreen(),
+      ),
+      (route) => false,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +34,7 @@ class MyHomePage extends StatelessWidget {
               color: const Color(0xFFE37D7D),
               borderRadius:
                   const BorderRadius.all(Radius.circular(Sizes.size48)),
-              onPressed: () {},
+              onPressed: () => _onTapStart(context),
               child: const Text(
                 "시작하기",
                 style: TextStyle(
