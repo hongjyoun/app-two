@@ -12,11 +12,8 @@ class _CatSoundScreenState extends State<CatSoundScreen> {
   final AudioPlayer _audioPlayer = AudioPlayer();
 
   void _playSound() {
-    // 소리 파일 경로
-    // String soundPath = 'assets/sounds/my_sound.mp3';
-
-    // 소리 파일을 재생
-    _audioPlayer.play(UrlSource('https://example.com/my-audio.wav'));
+    String soundPath = 'sounds/cat_sound.mp3';
+    _audioPlayer.play(AssetSource(soundPath));
   }
 
   @override
@@ -36,7 +33,7 @@ class _CatSoundScreenState extends State<CatSoundScreen> {
           SafeArea(
             child: Column(
               children: [
-                const Text("slkdfj"),
+                const Text("뚱냥이 1"),
                 GestureDetector(
                   onTap: _playSound,
                   child: const Image(

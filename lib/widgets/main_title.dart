@@ -37,7 +37,7 @@ class MainTitle extends StatelessWidget {
         Text(
           "고양이로 고양이를 불러보자",
           style: TextStyle(
-            color: Color(0xFFA7B9B0),
+            color: Color.fromARGB(255, 89, 102, 95),
             fontSize: Sizes.size20,
             fontFamily: 'SeoulHangangB',
             letterSpacing: 0.2,
