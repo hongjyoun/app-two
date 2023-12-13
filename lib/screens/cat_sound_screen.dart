@@ -1,3 +1,5 @@
+import 'package:app_two/constants/gaps.dart';
+import 'package:app_two/constants/sizes.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
@@ -65,6 +67,36 @@ class _CatSoundScreenState extends State<CatSoundScreen> {
           SafeArea(
             child: Stack(
               children: [
+                Positioned(
+                  top: 20,
+                  left: (MediaQuery.of(context).size.width / 2) -
+                      ((MediaQuery.of(context).size.width - 40) / 2),
+                  child: Container(
+                    height: 60,
+                    width: MediaQuery.of(context).size.width - 40,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFF0E2C6),
+                      borderRadius: BorderRadius.circular(Sizes.size28),
+                    ),
+                    child: const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image(
+                          image: AssetImage('assets/images/icon_cat.png'),
+                        ),
+                        Gaps.h16,
+                        Text(
+                          "고양이를 터치하면 소리가 나와요!",
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: Sizes.size18,
+                            fontFamily: 'SeoulHangangEB',
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
                 Positioned(
                   top: _positionsTop["cat1"],
                   left: _positionsLeft["cat1"],
