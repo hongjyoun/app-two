@@ -46,15 +46,15 @@ class _CatSoundScreenState extends State<CatSoundScreen> {
 
   void _makeSmall(context, index) {
     _sizes["cat$index"] = 230;
-    _positionsTop["cat$index"] = _positionsTop["cat$index"]! + 10;
-    _positionsLeft["cat$index"] = _positionsLeft["cat$index"]! + 10;
+    _positionsTop["cat$index"] = _positionsTop["cat$index"]! + 5;
+    _positionsLeft["cat$index"] = _positionsLeft["cat$index"]! + 5;
     setState(() => {});
   }
 
   void _makeBig(context, index) {
     _sizes["cat$index"] = 250;
-    _positionsTop["cat$index"] = _positionsTop["cat$index"]! - 10;
-    _positionsLeft["cat$index"] = _positionsLeft["cat$index"]! - 10;
+    _positionsTop["cat$index"] = _positionsTop["cat$index"]! - 5;
+    _positionsLeft["cat$index"] = _positionsLeft["cat$index"]! - 5;
     setState(() => {});
   }
 
