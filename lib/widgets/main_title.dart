@@ -35,7 +35,7 @@ class MainTitle extends StatelessWidget {
         ),
         Gaps.v10,
         Text(
-          "고양이로 고양이를 불러보자",
+          "고양이 소리로 고양이를 불러보자",
           style: TextStyle(
             color: Color.fromARGB(255, 89, 102, 95),
             fontSize: Sizes.size20,

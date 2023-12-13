@@ -19,17 +19,25 @@ class _CatSoundScreenState extends State<CatSoundScreen> {
     "cat4": 250,
   };
   final Map<String, double> _positionsTop = {
-    "cat1": 120,
-    "cat2": 300,
-    "cat3": 400,
-    "cat4": 450,
+    "cat1": -90,
+    "cat2": 40,
+    "cat3": 200,
+    "cat4": 200,
   };
   final Map<String, double> _positionsLeft = {
-    "cat1": 20,
-    "cat2": 20,
-    "cat3": 200,
-    "cat4": 20,
+    "cat1": -100,
+    "cat2": 40,
+    "cat3": 100,
+    "cat4": -70,
   };
+
+  double _getPositionTop(screenHeight, key) {
+    return (screenHeight / 2) + _positionsTop[key] - (_sizes[key]! / 2);
+  }
+
+  double _getPositionLeft(screenWidth, key) {
+    return (screenWidth / 2) + _positionsLeft[key] - (_sizes[key]! / 2);
+  }
 
   void _playSound(index) {
     String soundPath = 'sounds/cat_sound_$index.mp3';
@@ -98,8 +106,10 @@ class _CatSoundScreenState extends State<CatSoundScreen> {
                   ),
                 ),
                 Positioned(
-                  top: _positionsTop["cat1"],
-                  left: _positionsLeft["cat1"],
+                  top: _getPositionTop(
+                      MediaQuery.of(context).size.height, "cat1"),
+                  left: _getPositionLeft(
+                      MediaQuery.of(context).size.width, "cat1"),
                   child: GestureDetector(
                     onTap: () => _playSound(1),
                     onTapDown: (details) => _makeSmall(details, 1),
@@ -111,8 +121,10 @@ class _CatSoundScreenState extends State<CatSoundScreen> {
                   ),
                 ),
                 Positioned(
-                  top: _positionsTop["cat2"],
-                  left: _positionsLeft["cat2"],
+                  top: _getPositionTop(
+                      MediaQuery.of(context).size.height, "cat2"),
+                  left: _getPositionLeft(
+                      MediaQuery.of(context).size.width, "cat2"),
                   child: GestureDetector(
                     onTap: () => _playSound(2),
                     onTapDown: (details) => _makeSmall(details, 2),
@@ -124,8 +136,10 @@ class _CatSoundScreenState extends State<CatSoundScreen> {
                   ),
                 ),
                 Positioned(
-                  top: _positionsTop["cat3"],
-                  left: _positionsLeft["cat3"],
+                  top: _getPositionTop(
+                      MediaQuery.of(context).size.height, "cat3"),
+                  left: _getPositionLeft(
+                      MediaQuery.of(context).size.width, "cat3"),
                   child: GestureDetector(
                     onTap: () => _playSound(3),
                     onTapDown: (details) => _makeSmall(details, 3),
@@ -137,8 +151,10 @@ class _CatSoundScreenState extends State<CatSoundScreen> {
                   ),
                 ),
                 Positioned(
-                  top: _positionsTop["cat4"],
-                  left: _positionsLeft["cat4"],
+                  top: _getPositionTop(
+                      MediaQuery.of(context).size.height, "cat4"),
+                  left: _getPositionLeft(
+                      MediaQuery.of(context).size.width, "cat4"),
                   child: GestureDetector(
                     onTap: () => _playSound(4),
                     onTapDown: (details) => _makeSmall(details, 4),
